@@ -1,25 +1,25 @@
+// ignore_for_file: prefer_adjacent_string_concatenation
+
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:mof_tanzania/Index.dart';
 import 'package:mof_tanzania/MOFstructure.dart';
 import 'package:mof_tanzania/StrategicPlan.dart';
-import 'Page1.dart';
-import 'Vision.dart';
 
-class Index extends StatefulWidget {
-  const Index({Key? key});
+class Vision extends StatefulWidget {
+  const Vision({super.key});
 
   @override
-  _IndexState createState() => _IndexState();
+  State<Vision> createState() => _VisionState();
 }
 
-class _IndexState extends State<Index> {
+class _VisionState extends State<Vision> {
   bool isDrawerOpen = false;
   bool isAboutUsSubMenuOpen = false; // Track submenu state
   bool isMediaCenterSubMenuOpen = false;
   bool isProjectsSubMenuOpen = false;
   bool isServicesSubMenuOpen = false;
   bool isReportsSubMenuOpen = false;
-  bool isAdministrationSubMenuOpen = false;
+    bool isAdministrationSubMenuOpen = false;
 
   void openDrawer() {
     setState(() {
@@ -63,16 +63,31 @@ class _IndexState extends State<Index> {
     });
   }
 
-  void toggleAdministrationSubMenu() {
+    void toggleAdministrationSubMenu() {
     setState(() {
       isAdministrationSubMenuOpen = !isAdministrationSubMenuOpen;
     });
   }
 
+  final List<String> items = [
+    'Integrity and Confidentiality: We shall uphold the highest standards of ethics while exercising required level of confidentiality',
+    'Innovativeness: We shall be open-minded and creative in implementing our duties.',
+    'Professionalism: We shall apply the required skills, knowledge and competence in exercising our duties.',
+    'Transparency and Accountability: We shall be responsive in provision of services in an open and fair manner to all.',
+    'Customer focused: We shall strive to provide quality services to meet          customers’ expectations.',
+  ];
+
+  final smallBulletIcon = Icon(
+    Icons.brightness_1,
+    size: 9.0, // Adjust the size as needed
+    color: Colors.black,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 15, 110, 161),
         leading: Container(
           width: 60,
           height: 40,
@@ -101,7 +116,7 @@ class _IndexState extends State<Index> {
                     style: TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255),
                       fontSize: 18,
-                      // fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.bold,
                       shadows: [
                         Shadow(
                           color: Colors.black,
@@ -116,8 +131,8 @@ class _IndexState extends State<Index> {
                     "         MINISTRY OF FINANCE",
                     style: TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 17,
-                      // fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                       shadows: [
                         Shadow(
                           color: Colors.black,
@@ -133,272 +148,213 @@ class _IndexState extends State<Index> {
           ],
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.only(top: isDrawerOpen ? 0.0 : 0.0),
-        child: Stack(
-          children: [
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  if (isDrawerOpen)
-                    const SizedBox(height: 190.0), // Space for the open drawer
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Column(children: [
+              Positioned(
+                top: isDrawerOpen
+                    ? 90.0
+                    : 0.0, // Adjust the top margin as needed
+                left: 0,
+                right: 0,
+                bottom: 0,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      top: 60.0), // Adjust the top padding as needed
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: 400, // Adjust the height as needed
 
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 60.0), // Add horizontal padding
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        height: 200,
-                        aspectRatio: 16 / 9,
-                        enlargeCenterPage: true,
-                        autoPlay: true,
-                        autoPlayInterval: const Duration(seconds: 3),
-                        onPageChanged: (index, reason) {
-                          // Handle the page change event here
-                        },
-                      ),
-                      items: [
-                        Image.asset("lib/assets/wizara2.jpg"),
-                        Image.asset("lib/assets/wizara3.jpg"),
-                        Image.asset("lib/assets/wizara4.jpg"),
-                        // Add more images as needed
-                      ],
-                    ),
-                  ),
-
-                  Container(
-                    // width: double.infinity,
-                    height: 490,
-                    color: const Color.fromARGB(255, 15, 110, 161),
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 20.0,
-                        ),
-                        Container(
-                          alignment:
-                              Alignment.topCenter, // Align the image at the top
-                          child: Image.asset(
-                            "lib/assets/mwigulu.jpeg",
-                            width: 300,
-                            height: 200,
-                            // fit: BoxFit.contain,
-                          ),
-                        ),
-
-                        const Padding(
-                          padding:
-                              EdgeInsets.all(9.0), // Adjust padding as needed
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                ' "Inclusive sustainable economic growth" ',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize:
-                                      20, // Adjust the font size as needed
-                                  fontWeight: FontWeight.bold,
-                                  shadows: [
-                                    Shadow(
-                                      color: Color.fromARGB(255, 184, 166, 94),
-                                      offset: Offset(2, 2),
-                                      blurRadius: 3,
-                                    ),
-                                  ],
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(
-                                height: 8.0,
-                              ), // Adjust the spacing between lines
-                              Text(
-                                'Hon. Dr. Mwigulu L. Nchemba',
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 223, 195, 53),
-                                    fontSize:
-                                        18, // Adjust the font size as needed
-                                    fontWeight: FontWeight.bold),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(
-                                height: 15.0,
-                              ),
-                              Text(
-                                'Minister for Finance',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize:
-                                        18, // Adjust the font size as needed
-                                    fontWeight: FontWeight.bold),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        const SizedBox(
-                            height:
-                                16.0), // Add spacing between text and buttons
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment
-                              .center, // Align buttons in the center horizontally
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {
-                                // Handle the first button press
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.white, // Background color
-                                onPrimary: Colors.blue, // Text color
-                                minimumSize: const Size(300, 46),
-                              ),
-                              child: const Text('Biography'),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                            height: 8.0), // Add spacing between buttons
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment
-                              .center, // Align buttons in the center horizontally
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Page1()),
-                                );
-
-                                // Handle the first button press
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.white, // Background color
-                                onPrimary: Colors.blue, // Text color
-                                minimumSize: const Size(300, 46),
-                              ),
-                              child: const Text('Welcome'),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  Container(
-                    width: double.infinity,
-                    height: 500, // Adjust the height as needed
-                    color: const Color.fromARGB(
-                        255, 208, 210, 212), // Set the background color
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 25.0,
-                        ),
-                        Container(
-                          alignment:
-                              Alignment.topCenter, // Align the image at the top
-                          child: Image.asset(
-                            "lib/assets/natu mwamba.jpg",
-                            width: 300,
-                            height: 200,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  Container(
-                    height: 200,
-
-                    padding: const EdgeInsets.all(2.0), // Add padding as needed
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment
-                          .spaceBetween, // Align text to left and right
-                      children: [
-                        Text(
-                          'News Update',
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 18.0), // Adjust the right padding as needed
+                      child: SizedBox(
+                        height: 35.0,
+                        child: Text(
+                          'Vision and Mission',
                           style: TextStyle(
                             color: Color.fromARGB(255, 15, 110, 161),
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
-                          textAlign: TextAlign.left, // Align to the left
+                          textAlign: TextAlign.right, // Align to the left
                         ),
-                        Text(
-                          'View All',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 15, 110, 161),
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.right, // Align to the right
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    color: const Color.fromARGB(
-                        255, 15, 110, 161), // Color of the horizontal line
-                    height: 1.0, // Height of the horizontal line
-                    margin: const EdgeInsets.symmetric(
-                        horizontal: 8.0), // Adjust margin as needed
-                  ),
-                ],
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 16.0,
+                          right: 16.0), // Adjust the left padding as needed
+                      child: Divider(
+                        color: Color.fromARGB(255, 15, 110, 161),
+                        thickness: 2,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 18.0), // Adjust the right padding as needed
+                      child: SizedBox(
+                        height: 25.0,
+                        child: Text(
+                          'Vision',
+                          style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 7.0), // Adjust the right padding as needed
+                      child: Text(
+                        "Stable macro-economy and effective public finance management for human development.",
+                        style: TextStyle(
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 18.0), // Adjust the right padding as needed
+                      child: Text(
+                        "Mission",
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.left, // Align to the left
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 7.0), // Adjust the right padding as needed
+                      child: Text(
+                        "Promoting inclusive sustainable economic growth, through prudent economic policies and plans for human development.",
+                        style: TextStyle(
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 18.0), // Adjust the right padding as needed
+                      child: Text(
+                        "Core values",
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 7.0), // Adjust the right padding as needed
+                      child: Text(
+                        "The Ministry is committed to provide quality services to all its "
+                                " stakeholders in due course of fulfilling its mandate, pursue vision and " +
+                            " accomplish mission under the guidance of the following core values:",
+                        style: TextStyle(
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            if (isDrawerOpen)
-              Positioned(
-                top: 0,
-                left: 0,
-                bottom: 0,
-                child: GestureDetector(
-                  onHorizontalDragUpdate: (details) {
-                    if (details.delta.dx > 0) {
-                      // Swipe to the right, do nothing
-                    } else if (details.delta.dx < 0) {
-                      // Swipe to the left, close the drawer
-                      closeDrawer();
-                    }
-                  },
-                  child: Container(
-                    width: 200, // Width of the drawer
-                    color: Colors.white, // Color of the drawer
-                    child: DrawerMenu(
-                      closeDrawer,
-                      toggleAboutUsSubMenu,
-                      isAboutUsSubMenuOpen,
-                      toggleMediaCenterSubMenu, // Provide the toggleMediaCenterSubMenu function
-                      isMediaCenterSubMenuOpen,
-                      toggleProjectsSubMenu,
-                      isProjectsSubMenuOpen,
-                      toggleServicesSubMenu,
-                      isServicesSubMenuOpen,
-                      toggleReportsSubMenu,
-                      isReportsSubMenuOpen,
-                      toggleAdministrationSubMenu,
+              ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: items.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ListTile(
+                    dense: true,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
+                    leading: smallBulletIcon,
+                    title: Text(
+                      items[index],
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                      ),
+                    ),
+                  );
+                },
+              ),
+              Container(
+                alignment: Alignment.topCenter,
+                height: 490,
+                color: const Color.fromARGB(
+                    255, 15, 110, 161), // Align the image at the top
+                child: Text("Contact Us"),
+              ),
+            ]),
+          ),
+          if (isDrawerOpen)
+            Positioned(
+              top: 0,
+              left: 0,
+              bottom: 0,
+              child: GestureDetector(
+                onHorizontalDragUpdate: (details) {
+                  if (details.delta.dx > 0) {
+                    // Swipe to the right, do nothing
+                  } else if (details.delta.dx < 0) {
+                    // Swipe to the left, close the drawer
+                    closeDrawer();
+                  }
+                },
+                child: Container(
+                  width: 200, // Width of the drawer
+                  color: Colors.white, // Color of the drawer
+                  child: DrawerMenu(
+                    closeDrawer,
+                    toggleAboutUsSubMenu,
+                    isAboutUsSubMenuOpen,
+                    toggleMediaCenterSubMenu, // Provide the toggleMediaCenterSubMenu function
+                    isMediaCenterSubMenuOpen,
+                    toggleProjectsSubMenu,
+                    isProjectsSubMenuOpen,
+                    toggleServicesSubMenu,
+                    isServicesSubMenuOpen,
+                    toggleReportsSubMenu,
+                    isReportsSubMenuOpen,
+                     toggleAdministrationSubMenu,
                       isAdministrationSubMenuOpen,
-                    ), // Pass closeDrawer and submenu state
-                  ),
-                ),
-              ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Visibility(
-                visible: !isDrawerOpen, // Hide when the menu is open
-                child: IconButton(
-                  icon: Icon(Icons.menu),
-                  onPressed: () {
-                    openDrawer(); // Open the drawer
-                  },
+                  ), // Pass closeDrawer and submenu state
                 ),
               ),
             ),
-          ],
-        ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Visibility(
+              visible: !isDrawerOpen, // Hide when the menu is open
+              child: IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () {
+                  openDrawer(); // Open the drawer
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -421,7 +377,7 @@ class DrawerMenu extends StatelessWidget {
   final VoidCallback toggleReportsSubMenu;
   final bool isReportsSubMenuOpen;
 
-  final VoidCallback toggleAdministrationSubMenu;
+    final VoidCallback toggleAdministrationSubMenu;
   final bool isAdministrationSubMenuOpen;
 
   DrawerMenu(
@@ -436,7 +392,7 @@ class DrawerMenu extends StatelessWidget {
     this.isServicesSubMenuOpen,
     this.toggleReportsSubMenu,
     this.isReportsSubMenuOpen,
-    this.toggleAdministrationSubMenu,
+     this.toggleAdministrationSubMenu,
     this.isAdministrationSubMenuOpen,
   );
 
@@ -491,7 +447,7 @@ class DrawerMenu extends StatelessWidget {
                 // Handle 'Roles and Values' tap
               },
             ),
-            ExpansionTile(
+               ExpansionTile(
               title: const Text('Administration'),
               trailing: isAdministrationSubMenuOpen
                   ? const IconTheme(
@@ -511,13 +467,13 @@ class DrawerMenu extends StatelessWidget {
                 ListTile(
                   title: const Text('MOF Structure'),
                   onTap: () {
-                    Navigator.pop(context); // Close the submenu
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MOFstructure(),
-                        ));
-                  },
+                Navigator.pop(context); // Close the submenu
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MOFstructure(),
+                    ));
+              },
                 ),
                 ListTile(
                   title: const Text('Minister and Management Team'),

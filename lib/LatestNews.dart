@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:mof_tanzania/Index.dart';
 import 'package:mof_tanzania/MOFstructure.dart';
 import 'package:mof_tanzania/StrategicPlan.dart';
 import 'Page1.dart';
 import 'Vision.dart';
 
-class Index extends StatefulWidget {
-  const Index({Key? key});
+class LatestNews extends StatefulWidget {
+  const LatestNews({Key? key});
 
   @override
-  _IndexState createState() => _IndexState();
+  _LatestNewsState createState() => _LatestNewsState();
 }
 
-class _IndexState extends State<Index> {
+class _LatestNewsState extends State<LatestNews> {
   bool isDrawerOpen = false;
   bool isAboutUsSubMenuOpen = false; // Track submenu state
   bool isMediaCenterSubMenuOpen = false;
@@ -143,173 +144,6 @@ class _IndexState extends State<Index> {
                   if (isDrawerOpen)
                     const SizedBox(height: 190.0), // Space for the open drawer
 
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 60.0), // Add horizontal padding
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        height: 200,
-                        aspectRatio: 16 / 9,
-                        enlargeCenterPage: true,
-                        autoPlay: true,
-                        autoPlayInterval: const Duration(seconds: 3),
-                        onPageChanged: (index, reason) {
-                          // Handle the page change event here
-                        },
-                      ),
-                      items: [
-                        Image.asset("lib/assets/wizara2.jpg"),
-                        Image.asset("lib/assets/wizara3.jpg"),
-                        Image.asset("lib/assets/wizara4.jpg"),
-                        // Add more images as needed
-                      ],
-                    ),
-                  ),
-
-                  Container(
-                    // width: double.infinity,
-                    height: 490,
-                    color: const Color.fromARGB(255, 15, 110, 161),
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 20.0,
-                        ),
-                        Container(
-                          alignment:
-                              Alignment.topCenter, // Align the image at the top
-                          child: Image.asset(
-                            "lib/assets/mwigulu.jpeg",
-                            width: 300,
-                            height: 200,
-                            // fit: BoxFit.contain,
-                          ),
-                        ),
-
-                        const Padding(
-                          padding:
-                              EdgeInsets.all(9.0), // Adjust padding as needed
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                ' "Inclusive sustainable economic growth" ',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize:
-                                      20, // Adjust the font size as needed
-                                  fontWeight: FontWeight.bold,
-                                  shadows: [
-                                    Shadow(
-                                      color: Color.fromARGB(255, 184, 166, 94),
-                                      offset: Offset(2, 2),
-                                      blurRadius: 3,
-                                    ),
-                                  ],
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(
-                                height: 8.0,
-                              ), // Adjust the spacing between lines
-                              Text(
-                                'Hon. Dr. Mwigulu L. Nchemba',
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 223, 195, 53),
-                                    fontSize:
-                                        18, // Adjust the font size as needed
-                                    fontWeight: FontWeight.bold),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(
-                                height: 15.0,
-                              ),
-                              Text(
-                                'Minister for Finance',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize:
-                                        18, // Adjust the font size as needed
-                                    fontWeight: FontWeight.bold),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        const SizedBox(
-                            height:
-                                16.0), // Add spacing between text and buttons
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment
-                              .center, // Align buttons in the center horizontally
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {
-                                // Handle the first button press
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.white, // Background color
-                                onPrimary: Colors.blue, // Text color
-                                minimumSize: const Size(300, 46),
-                              ),
-                              child: const Text('Biography'),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                            height: 8.0), // Add spacing between buttons
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment
-                              .center, // Align buttons in the center horizontally
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Page1()),
-                                );
-
-                                // Handle the first button press
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.white, // Background color
-                                onPrimary: Colors.blue, // Text color
-                                minimumSize: const Size(300, 46),
-                              ),
-                              child: const Text('Welcome'),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  Container(
-                    width: double.infinity,
-                    height: 500, // Adjust the height as needed
-                    color: const Color.fromARGB(
-                        255, 208, 210, 212), // Set the background color
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 25.0,
-                        ),
-                        Container(
-                          alignment:
-                              Alignment.topCenter, // Align the image at the top
-                          child: Image.asset(
-                            "lib/assets/natu mwamba.jpg",
-                            width: 300,
-                            height: 200,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
                   Container(
                     height: 200,
 
@@ -339,14 +173,14 @@ class _IndexState extends State<Index> {
                       ],
                     ),
                   ),
-                  Container(
-                    width: double.infinity,
-                    color: const Color.fromARGB(
-                        255, 15, 110, 161), // Color of the horizontal line
-                    height: 1.0, // Height of the horizontal line
-                    margin: const EdgeInsets.symmetric(
-                        horizontal: 8.0), // Adjust margin as needed
-                  ),
+                  // Container(
+                  //   width: 150,
+                  //   color: const Color.fromARGB(
+                  //       255, 15, 110, 161), // Color of the horizontal line
+                  //   height: 1.0, // Height of the horizontal line
+                  //   margin: const EdgeInsets.symmetric(
+                  //       horizontal: 8.0), // Adjust margin as needed
+                  // ),
                 ],
               ),
             ),

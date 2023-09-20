@@ -40,6 +40,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  url_launcher: ^6.0.13
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -68,6 +69,19 @@ flutter:
     - lib/assets/wizara4.jpg
     - lib/assets/flag.png
     - lib/assets/mwigulu.jpeg
+    - lib/assets/natu mwamba.jpg
+
+    #Rahma
+
+
+    - lib/assets/uhuru na umoja.png
+    - lib/assets/mof 1.jpg
+    - lib/assets/NEWS2.png
+    - lib/assets/maliyoun.jpg
+    - lib/assets/open data.jpg
+    
+
+
     # - lib/assets/bonderaMOF1.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

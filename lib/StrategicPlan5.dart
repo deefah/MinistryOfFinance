@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:mof_tanzania/Home.dart';
+import 'package:mof_tanzania/Index.dart';
 import 'package:mof_tanzania/MOFstructure.dart';
 import 'package:mof_tanzania/StrategicPlan.dart';
-import 'Page1.dart';
-import 'Vision.dart';
+import 'package:mof_tanzania/Vision.dart';
 
-class Index extends StatefulWidget {
-  const Index({Key? key});
+class StrategicPlan5 extends StatefulWidget {
+  const StrategicPlan5({super.key});
 
   @override
-  _IndexState createState() => _IndexState();
+  State<StrategicPlan5> createState() => _StrategicPlan5State();
 }
 
-class _IndexState extends State<Index> {
+class _StrategicPlan5State extends State<StrategicPlan5> {
   bool isDrawerOpen = false;
   bool isAboutUsSubMenuOpen = false; // Track submenu state
   bool isMediaCenterSubMenuOpen = false;
   bool isProjectsSubMenuOpen = false;
   bool isServicesSubMenuOpen = false;
   bool isReportsSubMenuOpen = false;
-  bool isAdministrationSubMenuOpen = false;
+    bool isAdministrationSubMenuOpen = false;
 
   void openDrawer() {
     setState(() {
@@ -63,7 +63,7 @@ class _IndexState extends State<Index> {
     });
   }
 
-  void toggleAdministrationSubMenu() {
+    void toggleAdministrationSubMenu() {
     setState(() {
       isAdministrationSubMenuOpen = !isAdministrationSubMenuOpen;
     });
@@ -73,6 +73,7 @@ class _IndexState extends State<Index> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 15, 110, 161),
         leading: Container(
           width: 60,
           height: 40,
@@ -101,7 +102,7 @@ class _IndexState extends State<Index> {
                     style: TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255),
                       fontSize: 18,
-                      // fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.bold,
                       shadows: [
                         Shadow(
                           color: Colors.black,
@@ -116,8 +117,8 @@ class _IndexState extends State<Index> {
                     "         MINISTRY OF FINANCE",
                     style: TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 17,
-                      // fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                       shadows: [
                         Shadow(
                           color: Colors.black,
@@ -133,272 +134,159 @@ class _IndexState extends State<Index> {
           ],
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.only(top: isDrawerOpen ? 0.0 : 0.0),
-        child: Stack(
-          children: [
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  if (isDrawerOpen)
-                    const SizedBox(height: 190.0), // Space for the open drawer
-
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 60.0), // Add horizontal padding
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        height: 200,
-                        aspectRatio: 16 / 9,
-                        enlargeCenterPage: true,
-                        autoPlay: true,
-                        autoPlayInterval: const Duration(seconds: 3),
-                        onPageChanged: (index, reason) {
-                          // Handle the page change event here
-                        },
-                      ),
-                      items: [
-                        Image.asset("lib/assets/wizara2.jpg"),
-                        Image.asset("lib/assets/wizara3.jpg"),
-                        Image.asset("lib/assets/wizara4.jpg"),
-                        // Add more images as needed
-                      ],
-                    ),
-                  ),
-
-                  Container(
-                    // width: double.infinity,
-                    height: 490,
-                    color: const Color.fromARGB(255, 15, 110, 161),
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 20.0,
-                        ),
-                        Container(
-                          alignment:
-                              Alignment.topCenter, // Align the image at the top
-                          child: Image.asset(
-                            "lib/assets/mwigulu.jpeg",
-                            width: 300,
-                            height: 200,
-                            // fit: BoxFit.contain,
-                          ),
-                        ),
-
-                        const Padding(
-                          padding:
-                              EdgeInsets.all(9.0), // Adjust padding as needed
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                ' "Inclusive sustainable economic growth" ',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize:
-                                      20, // Adjust the font size as needed
-                                  fontWeight: FontWeight.bold,
-                                  shadows: [
-                                    Shadow(
-                                      color: Color.fromARGB(255, 184, 166, 94),
-                                      offset: Offset(2, 2),
-                                      blurRadius: 3,
-                                    ),
-                                  ],
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(
-                                height: 8.0,
-                              ), // Adjust the spacing between lines
-                              Text(
-                                'Hon. Dr. Mwigulu L. Nchemba',
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 223, 195, 53),
-                                    fontSize:
-                                        18, // Adjust the font size as needed
-                                    fontWeight: FontWeight.bold),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(
-                                height: 15.0,
-                              ),
-                              Text(
-                                'Minister for Finance',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize:
-                                        18, // Adjust the font size as needed
-                                    fontWeight: FontWeight.bold),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        const SizedBox(
-                            height:
-                                16.0), // Add spacing between text and buttons
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment
-                              .center, // Align buttons in the center horizontally
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {
-                                // Handle the first button press
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.white, // Background color
-                                onPrimary: Colors.blue, // Text color
-                                minimumSize: const Size(300, 46),
-                              ),
-                              child: const Text('Biography'),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                            height: 8.0), // Add spacing between buttons
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment
-                              .center, // Align buttons in the center horizontally
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Page1()),
-                                );
-
-                                // Handle the first button press
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.white, // Background color
-                                onPrimary: Colors.blue, // Text color
-                                minimumSize: const Size(300, 46),
-                              ),
-                              child: const Text('Welcome'),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  Container(
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Column(children: [
+              Positioned(
+                top: isDrawerOpen
+                    ? 90.0
+                    : 0.0, // Adjust the top margin as needed
+                left: 0,
+                right: 0,
+                bottom: 0,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      top: 60.0), // Adjust the top padding as needed
+                  child: Container(
                     width: double.infinity,
                     height: 500, // Adjust the height as needed
-                    color: const Color.fromARGB(
-                        255, 208, 210, 212), // Set the background color
-                    child: Column(
+
+                    child: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(
-                          height: 25.0,
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: 18.0), // Adjust the right padding as needed
+                          child: SizedBox(
+                            height: 35.0,
+                            child: Text(
+                              'MOF Strategic Plan',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 15, 110, 161),
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.right, // Align to the left
+                            ),
+                          ),
                         ),
-                        Container(
-                          alignment:
-                              Alignment.topCenter, // Align the image at the top
-                          child: Image.asset(
-                            "lib/assets/natu mwamba.jpg",
-                            width: 300,
-                            height: 200,
-                            fit: BoxFit.contain,
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: 16.0,
+                              right: 16.0), // Adjust the left padding as needed
+                          child: Divider(
+                            color: Color.fromARGB(255, 15, 110, 161),
+                            thickness: 2,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: 18.0), // Adjust the right padding as needed
+                          child: Text(
+                            "Implementation of the second SP comes to an end in the next two years (2020/21-2021/22). Therefore, the main focus of the MOF is to continue ensuring prudent macroeconomic management, public finance management through effective resources mobilization, allocation, utilization and monitoring and evaluation. The Ministry’s Management and Staff in particular, will continue to maintain the capacity and ability to successfully implement this Strategic Plan.",
+                            style: TextStyle(
+                              fontSize: 15,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
-
-                  Container(
-                    height: 200,
-
-                    padding: const EdgeInsets.all(2.0), // Add padding as needed
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment
-                          .spaceBetween, // Align text to left and right
-                      children: [
-                        Text(
-                          'News Update',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 15, 110, 161),
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left, // Align to the left
-                        ),
-                        Text(
-                          'View All',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 15, 110, 161),
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.right, // Align to the right
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    color: const Color.fromARGB(
-                        255, 15, 110, 161), // Color of the horizontal line
-                    height: 1.0, // Height of the horizontal line
-                    margin: const EdgeInsets.symmetric(
-                        horizontal: 8.0), // Adjust margin as needed
-                  ),
-                ],
+                ),
               ),
-            ),
-            if (isDrawerOpen)
-              Positioned(
-                top: 0,
-                left: 0,
-                bottom: 0,
+              Container(
+                alignment: Alignment.topCenter,
+                padding: EdgeInsets.symmetric(vertical: 0.5),
                 child: GestureDetector(
-                  onHorizontalDragUpdate: (details) {
-                    if (details.delta.dx > 0) {
-                      // Swipe to the right, do nothing
-                    } else if (details.delta.dx < 0) {
-                      // Swipe to the left, close the drawer
-                      closeDrawer();
-                    }
+                  onTap: () {
+                    Navigator.pop(context); // Close the submenu
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Home(),
+                        ));
                   },
-                  child: Container(
-                    width: 200, // Width of the drawer
-                    color: Colors.white, // Color of the drawer
-                    child: DrawerMenu(
-                      closeDrawer,
-                      toggleAboutUsSubMenu,
-                      isAboutUsSubMenuOpen,
-                      toggleMediaCenterSubMenu, // Provide the toggleMediaCenterSubMenu function
-                      isMediaCenterSubMenuOpen,
-                      toggleProjectsSubMenu,
-                      isProjectsSubMenuOpen,
-                      toggleServicesSubMenu,
-                      isServicesSubMenuOpen,
-                      toggleReportsSubMenu,
-                      isReportsSubMenuOpen,
-                      toggleAdministrationSubMenu,
-                      isAdministrationSubMenuOpen,
-                    ), // Pass closeDrawer and submenu state
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Download MOF Strategic Plan',
+                        style: TextStyle(
+                          color: Colors.blue, // You can change the color
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_forward,
+                        color: Colors.blue, // You can change the color
+                        size: 20,
+                      ),
+                    ],
                   ),
                 ),
               ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Visibility(
-                visible: !isDrawerOpen, // Hide when the menu is open
-                child: IconButton(
-                  icon: Icon(Icons.menu),
-                  onPressed: () {
-                    openDrawer(); // Open the drawer
-                  },
+              // Container(
+              //   alignment: Alignment.topCenter,
+              //   height: 490,
+              //   color: const Color.fromARGB(
+              //       255, 15, 110, 161), // Align the image at the top
+              //   child: Text("Contact Us"),
+              // ),
+            ]),
+          ),
+          if (isDrawerOpen)
+            Positioned(
+              top: 0,
+              left: 0,
+              bottom: 0,
+              child: GestureDetector(
+                onHorizontalDragUpdate: (details) {
+                  if (details.delta.dx > 0) {
+                    // Swipe to the right, do nothing
+                  } else if (details.delta.dx < 0) {
+                    // Swipe to the left, close the drawer
+                    closeDrawer();
+                  }
+                },
+                child: Container(
+                  width: 200, // Width of the drawer
+                  color: Colors.white, // Color of the drawer
+                  child: DrawerMenu(
+                    closeDrawer,
+                    toggleAboutUsSubMenu,
+                    isAboutUsSubMenuOpen,
+                    toggleMediaCenterSubMenu, // Provide the toggleMediaCenterSubMenu function
+                    isMediaCenterSubMenuOpen,
+                    toggleProjectsSubMenu,
+                    isProjectsSubMenuOpen,
+                    toggleServicesSubMenu,
+                    isServicesSubMenuOpen,
+                    toggleReportsSubMenu,
+                    isReportsSubMenuOpen,
+                     toggleAdministrationSubMenu,
+                      isAdministrationSubMenuOpen,
+                  ), // Pass closeDrawer and submenu state
                 ),
               ),
             ),
-          ],
-        ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Visibility(
+              visible: !isDrawerOpen, // Hide when the menu is open
+              child: IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () {
+                  openDrawer(); // Open the drawer
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -421,7 +309,7 @@ class DrawerMenu extends StatelessWidget {
   final VoidCallback toggleReportsSubMenu;
   final bool isReportsSubMenuOpen;
 
-  final VoidCallback toggleAdministrationSubMenu;
+    final VoidCallback toggleAdministrationSubMenu;
   final bool isAdministrationSubMenuOpen;
 
   DrawerMenu(
@@ -436,23 +324,23 @@ class DrawerMenu extends StatelessWidget {
     this.isServicesSubMenuOpen,
     this.toggleReportsSubMenu,
     this.isReportsSubMenuOpen,
-    this.toggleAdministrationSubMenu,
+     this.toggleAdministrationSubMenu,
     this.isAdministrationSubMenuOpen,
   );
 
-  @override
+   @override
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
         ListTile(
           title: const Text('Home'),
           onTap: () {
-            Navigator.pop(context); // Close the submenu
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Index(),
-                ));
+              Navigator.pop(context); // Close the submenu
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Index(),
+                    ));      
             closeDrawer(); // Close the drawer
             // Handle the Home menu item tap
             // You can navigate or perform other actions here
@@ -491,7 +379,7 @@ class DrawerMenu extends StatelessWidget {
                 // Handle 'Roles and Values' tap
               },
             ),
-            ExpansionTile(
+                ExpansionTile(
               title: const Text('Administration'),
               trailing: isAdministrationSubMenuOpen
                   ? const IconTheme(
@@ -511,13 +399,13 @@ class DrawerMenu extends StatelessWidget {
                 ListTile(
                   title: const Text('MOF Structure'),
                   onTap: () {
-                    Navigator.pop(context); // Close the submenu
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MOFstructure(),
-                        ));
-                  },
+                Navigator.pop(context); // Close the submenu
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MOFstructure(),
+                    ));
+              },
                 ),
                 ListTile(
                   title: const Text('Minister and Management Team'),
