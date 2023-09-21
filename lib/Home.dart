@@ -12,6 +12,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 15, 110, 161),
         title: const Row(
           children: [
             SizedBox(width: 10),
@@ -23,7 +24,7 @@ class Home extends StatelessWidget {
                   style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  'MINISTRY OF FINANCE',
+                  '           MINISTRY OF FINANCE',
                   style: TextStyle(fontSize: 14),
                 ),
               ],
@@ -59,7 +60,7 @@ class Home extends StatelessWidget {
                   context,
                   'lib/assets/mof 1.jpg',
                   'MOF Website',
-                  'https://www.mof.go.tz', // Replace with your website URL
+                  Index(), // Replace with your website URL
                 ),
               ),
               Padding(
@@ -101,10 +102,9 @@ class Home extends StatelessWidget {
                 Navigator.of(context).pop();
               },
             ),
-            _buildDrawerItem(context, 'lib/assets/mof 1.jpg', 'Home',
-                Index()), 
-            _buildDrawerItem(context, 'lib/assets/NEWS2.png', 'Latest News',
-                LatestNews()), 
+            _buildDrawerItem(context, 'lib/assets/mof 1.jpg', 'Home', Index()),
+            _buildDrawerItem(
+                context, 'lib/assets/NEWS2.png', 'Latest News', LatestNews()),
             _buildDrawerItem(context, 'lib/assets/maliyoun.jpg',
                 'Strategic Plan', StrategicPlan()),
             _buildDrawerItem(

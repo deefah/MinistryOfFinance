@@ -19,7 +19,7 @@ class _StrategicPlan5State extends State<StrategicPlan5> {
   bool isProjectsSubMenuOpen = false;
   bool isServicesSubMenuOpen = false;
   bool isReportsSubMenuOpen = false;
-    bool isAdministrationSubMenuOpen = false;
+  bool isAdministrationSubMenuOpen = false;
 
   void openDrawer() {
     setState(() {
@@ -63,7 +63,7 @@ class _StrategicPlan5State extends State<StrategicPlan5> {
     });
   }
 
-    void toggleAdministrationSubMenu() {
+  void toggleAdministrationSubMenu() {
     setState(() {
       isAdministrationSubMenuOpen = !isAdministrationSubMenuOpen;
     });
@@ -73,64 +73,24 @@ class _StrategicPlan5State extends State<StrategicPlan5> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 15, 110, 161),
-        leading: Container(
-          width: 60,
-          height: 40,
-          decoration: const BoxDecoration(
-              // image: DecorationImage(
-              //   image: AssetImage("lib/assets/uhuru.jpg"),
-              //   fit: BoxFit.cover,
-              // ),
-              ),
-        ),
-        elevation: 0,
-        flexibleSpace: const Stack(
+        backgroundColor: const Color.fromARGB(255, 15, 110, 161),
+        title: const Row(
           children: [
-            // Image.asset(
-            //   "lib/assets/logo.png", // Use the logo image path
-            //   width: double.infinity,
-            //   height: double.infinity,
-            //   fit: BoxFit.cover,
-            // ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "         The United Republic Of Tanzania",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                          color: Colors.black,
-                          offset: Offset(2, 2),
-                          blurRadius: 3,
-                        ),
-                      ],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  Text(
-                    "         MINISTRY OF FINANCE",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                          color: Colors.black,
-                          offset: Offset(2, 2),
-                          blurRadius: 3,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+            SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'THE UNITED REPUBLIC OF TANZANIA',
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  '           MINISTRY OF FINANCE',
+                  style: TextStyle(fontSize: 14),
+                ),
+              ],
             ),
+            SizedBox(width: 10),
           ],
         ),
       ),
@@ -216,14 +176,16 @@ class _StrategicPlan5State extends State<StrategicPlan5> {
                       Text(
                         'Download MOF Strategic Plan',
                         style: TextStyle(
-                          color: Colors.blue, // You can change the color
+                          color: const Color.fromARGB(
+                              255, 15, 110, 161), // You can change the color
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Icon(
                         Icons.arrow_forward,
-                        color: Colors.blue, // You can change the color
+                        color: const Color.fromARGB(
+                            255, 15, 110, 161), // You can change the color
                         size: 20,
                       ),
                     ],
@@ -268,8 +230,8 @@ class _StrategicPlan5State extends State<StrategicPlan5> {
                     isServicesSubMenuOpen,
                     toggleReportsSubMenu,
                     isReportsSubMenuOpen,
-                     toggleAdministrationSubMenu,
-                      isAdministrationSubMenuOpen,
+                    toggleAdministrationSubMenu,
+                    isAdministrationSubMenuOpen,
                   ), // Pass closeDrawer and submenu state
                 ),
               ),
@@ -309,7 +271,7 @@ class DrawerMenu extends StatelessWidget {
   final VoidCallback toggleReportsSubMenu;
   final bool isReportsSubMenuOpen;
 
-    final VoidCallback toggleAdministrationSubMenu;
+  final VoidCallback toggleAdministrationSubMenu;
   final bool isAdministrationSubMenuOpen;
 
   DrawerMenu(
@@ -324,23 +286,23 @@ class DrawerMenu extends StatelessWidget {
     this.isServicesSubMenuOpen,
     this.toggleReportsSubMenu,
     this.isReportsSubMenuOpen,
-     this.toggleAdministrationSubMenu,
+    this.toggleAdministrationSubMenu,
     this.isAdministrationSubMenuOpen,
   );
 
-   @override
+  @override
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
         ListTile(
           title: const Text('Home'),
           onTap: () {
-              Navigator.pop(context); // Close the submenu
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Index(),
-                    ));      
+            Navigator.pop(context); // Close the submenu
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Index(),
+                ));
             closeDrawer(); // Close the drawer
             // Handle the Home menu item tap
             // You can navigate or perform other actions here
@@ -379,7 +341,7 @@ class DrawerMenu extends StatelessWidget {
                 // Handle 'Roles and Values' tap
               },
             ),
-                ExpansionTile(
+            ExpansionTile(
               title: const Text('Administration'),
               trailing: isAdministrationSubMenuOpen
                   ? const IconTheme(
@@ -399,13 +361,13 @@ class DrawerMenu extends StatelessWidget {
                 ListTile(
                   title: const Text('MOF Structure'),
                   onTap: () {
-                Navigator.pop(context); // Close the submenu
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MOFstructure(),
-                    ));
-              },
+                    Navigator.pop(context); // Close the submenu
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MOFstructure(),
+                        ));
+                  },
                 ),
                 ListTile(
                   title: const Text('Minister and Management Team'),

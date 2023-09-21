@@ -72,66 +72,26 @@ class _StrategicPlan3State extends State<StrategicPlan3> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+  return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 15, 110, 161),
-        leading: Container(
-          width: 60,
-          height: 40,
-          decoration: const BoxDecoration(
-              // image: DecorationImage(
-              //   image: AssetImage("lib/assets/uhuru.jpg"),
-              //   fit: BoxFit.cover,
-              // ),
-              ),
-        ),
-        elevation: 0,
-        flexibleSpace: const Stack(
+        backgroundColor: const Color.fromARGB(255, 15, 110, 161),
+        title: const Row(
           children: [
-            // Image.asset(
-            //   "lib/assets/logo.png", // Use the logo image path
-            //   width: double.infinity,
-            //   height: double.infinity,
-            //   fit: BoxFit.cover,
-            // ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "         The United Republic Of Tanzania",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                          color: Colors.black,
-                          offset: Offset(2, 2),
-                          blurRadius: 3,
-                        ),
-                      ],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  Text(
-                    "         MINISTRY OF FINANCE",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                          color: Colors.black,
-                          offset: Offset(2, 2),
-                          blurRadius: 3,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+            SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'THE UNITED REPUBLIC OF TANZANIA',
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  '           MINISTRY OF FINANCE',
+                  style: TextStyle(fontSize: 14),
+                ),
+              ],
             ),
+            SizedBox(width: 10),
           ],
         ),
       ),
@@ -177,7 +137,7 @@ class _StrategicPlan3State extends State<StrategicPlan3> {
                               left: 16.0,
                               right: 16.0), // Adjust the left padding as needed
                           child: Divider(
-                            color: Color.fromARGB(255, 15, 110, 161),
+                            color: const Color.fromARGB(255, 15, 110, 161),
                             thickness: 2,
                           ),
                         ),
@@ -221,13 +181,13 @@ class _StrategicPlan3State extends State<StrategicPlan3> {
                             children: [
                               Icon(
                                 Icons.arrow_back,
-                                color: Colors.blue,
+                                color: const Color.fromARGB(255, 15, 110, 161),
                                 size: 20,
                               ),
                               Text(
                                 'Back',
                                 style: TextStyle(
-                                  color: Colors.blue,
+                                  color: const Color.fromARGB(255, 15, 110, 161),
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -251,14 +211,14 @@ class _StrategicPlan3State extends State<StrategicPlan3> {
                               Text(
                                 'Next',
                                 style: TextStyle(
-                                  color: Colors.blue,
+                                  color: const Color.fromARGB(255, 15, 110, 161),
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Icon(
                                 Icons.arrow_forward,
-                                color: Colors.blue,
+                                color: const Color.fromARGB(255, 15, 110, 161),
                                 size: 20,
                               ),
                             ],

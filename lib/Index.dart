@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:mof_tanzania/Contact.dart';
 import 'package:mof_tanzania/MOFstructure.dart';
 import 'package:mof_tanzania/StrategicPlan.dart';
 import 'Page1.dart';
@@ -73,63 +74,24 @@ class _IndexState extends State<Index> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Container(
-          width: 60,
-          height: 40,
-          decoration: const BoxDecoration(
-              // image: DecorationImage(
-              //   image: AssetImage("lib/assets/uhuru.jpg"),
-              //   fit: BoxFit.cover,
-              // ),
-              ),
-        ),
-        elevation: 0,
-        flexibleSpace: const Stack(
+        backgroundColor: const Color.fromARGB(255, 15, 110, 161),
+        title: const Row(
           children: [
-            // Image.asset(
-            //   "lib/assets/logo.png", // Use the logo image path
-            //   width: double.infinity,
-            //   height: double.infinity,
-            //   fit: BoxFit.cover,
-            // ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "         The United Republic Of Tanzania",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 18,
-                      // fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                          color: Colors.black,
-                          offset: Offset(2, 2),
-                          blurRadius: 3,
-                        ),
-                      ],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  Text(
-                    "         MINISTRY OF FINANCE",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 17,
-                      // fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                          color: Colors.black,
-                          offset: Offset(2, 2),
-                          blurRadius: 3,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+            SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'THE UNITED REPUBLIC OF TANZANIA',
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  '           MINISTRY OF FINANCE',
+                  style: TextStyle(fontSize: 14),
+                ),
+              ],
             ),
+            SizedBox(width: 10),
           ],
         ),
       ),
@@ -168,7 +130,7 @@ class _IndexState extends State<Index> {
 
                   Container(
                     // width: double.infinity,
-                    height: 490,
+                    height: 511,
                     color: const Color.fromARGB(255, 15, 110, 161),
                     child: Column(
                       children: [
@@ -286,59 +248,59 @@ class _IndexState extends State<Index> {
                     ),
                   ),
 
-                  Container(
-                    width: double.infinity,
-                    height: 500, // Adjust the height as needed
-                    color: const Color.fromARGB(
-                        255, 208, 210, 212), // Set the background color
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 25.0,
-                        ),
-                        Container(
-                          alignment:
-                              Alignment.topCenter, // Align the image at the top
-                          child: Image.asset(
-                            "lib/assets/natu mwamba.jpg",
-                            width: 300,
-                            height: 200,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  // Container(
+                  //   width: double.infinity,
+                  //   height: 500, // Adjust the height as needed
+                  //   color: const Color.fromARGB(
+                  //       255, 208, 210, 212), // Set the background color
+                  //   child: Column(
+                  //     children: [
+                  //       const SizedBox(
+                  //         height: 25.0,
+                  //       ),
+                  //       Container(
+                  //         alignment:
+                  //             Alignment.topCenter, // Align the image at the top
+                  //         child: Image.asset(
+                  //           "lib/assets/natu mwamba.jpg",
+                  //           width: 300,
+                  //           height: 200,
+                  //           fit: BoxFit.contain,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
 
-                  Container(
-                    height: 200,
+                  // Container(
+                  //   height: 200,
 
-                    padding: const EdgeInsets.all(2.0), // Add padding as needed
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment
-                          .spaceBetween, // Align text to left and right
-                      children: [
-                        Text(
-                          'News Update',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 15, 110, 161),
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left, // Align to the left
-                        ),
-                        Text(
-                          'View All',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 15, 110, 161),
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.right, // Align to the right
-                        ),
-                      ],
-                    ),
-                  ),
+                  //   padding: const EdgeInsets.all(2.0), // Add padding as needed
+                  //   child: const Row(
+                  //     mainAxisAlignment: MainAxisAlignment
+                  //         .spaceBetween, // Align text to left and right
+                  //     children: [
+                  //       Text(
+                  //         'News Update',
+                  //         style: TextStyle(
+                  //           color: Color.fromARGB(255, 15, 110, 161),
+                  //           fontSize: 15,
+                  //           fontWeight: FontWeight.bold,
+                  //         ),
+                  //         textAlign: TextAlign.left, // Align to the left
+                  //       ),
+                  //       Text(
+                  //         'View All',
+                  //         style: TextStyle(
+                  //           color: Color.fromARGB(255, 15, 110, 161),
+                  //           fontSize: 11,
+                  //           fontWeight: FontWeight.bold,
+                  //         ),
+                  //         textAlign: TextAlign.right, // Align to the right
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                   Container(
                     width: double.infinity,
                     color: const Color.fromARGB(
@@ -895,9 +857,12 @@ class DrawerMenu extends StatelessWidget {
         ListTile(
           title: const Text('Contact us'),
           onTap: () {
-            closeDrawer(); // Close the drawer
-            // Handle the Settings menu item tap
-            // You can navigate or perform other actions here
+            Navigator.pop(context); // Close the submenu
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Contact(),
+                ));
           },
         ),
         ListTile(

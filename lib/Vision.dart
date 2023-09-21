@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_adjacent_string_concatenation
-
 import 'package:flutter/material.dart';
 import 'package:mof_tanzania/Index.dart';
 import 'package:mof_tanzania/MOFstructure.dart';
@@ -19,7 +17,7 @@ class _VisionState extends State<Vision> {
   bool isProjectsSubMenuOpen = false;
   bool isServicesSubMenuOpen = false;
   bool isReportsSubMenuOpen = false;
-    bool isAdministrationSubMenuOpen = false;
+  bool isAdministrationSubMenuOpen = false;
 
   void openDrawer() {
     setState(() {
@@ -63,7 +61,7 @@ class _VisionState extends State<Vision> {
     });
   }
 
-    void toggleAdministrationSubMenu() {
+  void toggleAdministrationSubMenu() {
     setState(() {
       isAdministrationSubMenuOpen = !isAdministrationSubMenuOpen;
     });
@@ -77,7 +75,7 @@ class _VisionState extends State<Vision> {
     'Customer focused: We shall strive to provide quality services to meet          customers’ expectations.',
   ];
 
-  final smallBulletIcon = Icon(
+  final smallBulletIcon = const Icon(
     Icons.brightness_1,
     size: 9.0, // Adjust the size as needed
     color: Colors.black,
@@ -87,64 +85,24 @@ class _VisionState extends State<Vision> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 15, 110, 161),
-        leading: Container(
-          width: 60,
-          height: 40,
-          decoration: const BoxDecoration(
-              // image: DecorationImage(
-              //   image: AssetImage("lib/assets/uhuru.jpg"),
-              //   fit: BoxFit.cover,
-              // ),
-              ),
-        ),
-        elevation: 0,
-        flexibleSpace: const Stack(
+        backgroundColor: const Color.fromARGB(255, 15, 110, 161),
+        title: const Row(
           children: [
-            // Image.asset(
-            //   "lib/assets/logo.png", // Use the logo image path
-            //   width: double.infinity,
-            //   height: double.infinity,
-            //   fit: BoxFit.cover,
-            // ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "         The United Republic Of Tanzania",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                          color: Colors.black,
-                          offset: Offset(2, 2),
-                          blurRadius: 3,
-                        ),
-                      ],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  Text(
-                    "         MINISTRY OF FINANCE",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                          color: Colors.black,
-                          offset: Offset(2, 2),
-                          blurRadius: 3,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+            SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'THE UNITED REPUBLIC OF TANZANIA',
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  '           MINISTRY OF FINANCE',
+                  style: TextStyle(fontSize: 14),
+                ),
+              ],
             ),
+            SizedBox(width: 10),
           ],
         ),
       ),
@@ -153,27 +111,22 @@ class _VisionState extends State<Vision> {
           SingleChildScrollView(
             child: Column(children: [
               Positioned(
-                top: isDrawerOpen
-                    ? 90.0
-                    : 0.0, // Adjust the top margin as needed
+                top: isDrawerOpen ? 90.0 : 0.0,
                 left: 0,
                 right: 0,
                 bottom: 0,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                      top: 60.0), // Adjust the top padding as needed
+                child: const Padding(
+                  padding: EdgeInsets.only(top: 60.0),
                 ),
               ),
               Container(
                 width: double.infinity,
-                height: 400, // Adjust the height as needed
-
+                height: 360,
                 child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 18.0), // Adjust the right padding as needed
+                      padding: EdgeInsets.only(left: 18.0),
                       child: SizedBox(
                         height: 35.0,
                         child: Text(
@@ -183,14 +136,12 @@ class _VisionState extends State<Vision> {
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
-                          textAlign: TextAlign.right, // Align to the left
+                          textAlign: TextAlign.right,
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 16.0,
-                          right: 16.0), // Adjust the left padding as needed
+                      padding: EdgeInsets.only(left: 16.0, right: 16.0),
                       child: Divider(
                         color: Color.fromARGB(255, 15, 110, 161),
                         thickness: 2,
@@ -200,10 +151,9 @@ class _VisionState extends State<Vision> {
                       height: 25,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 18.0), // Adjust the right padding as needed
+                      padding: EdgeInsets.only(left: 18.0),
                       child: SizedBox(
-                        height: 25.0,
+                        height: 20.0,
                         child: Text(
                           'Vision',
                           style: TextStyle(
@@ -215,8 +165,7 @@ class _VisionState extends State<Vision> {
                       height: 15,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 7.0), // Adjust the right padding as needed
+                      padding: EdgeInsets.only(left: 7.0),
                       child: Text(
                         "Stable macro-economy and effective public finance management for human development.",
                         style: TextStyle(
@@ -228,21 +177,19 @@ class _VisionState extends State<Vision> {
                       height: 15,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 18.0), // Adjust the right padding as needed
+                      padding: EdgeInsets.only(left: 18.0),
                       child: Text(
                         "Mission",
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.left, // Align to the left
+                        textAlign: TextAlign.left,
                       ),
                     ),
                     SizedBox(
                       height: 15,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 7.0), // Adjust the right padding as needed
+                      padding: EdgeInsets.only(left: 7.0),
                       child: Text(
                         "Promoting inclusive sustainable economic growth, through prudent economic policies and plans for human development.",
                         style: TextStyle(
@@ -254,8 +201,7 @@ class _VisionState extends State<Vision> {
                       height: 10,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 18.0), // Adjust the right padding as needed
+                      padding: EdgeInsets.only(left: 18.0),
                       child: Text(
                         "Core values",
                         style: TextStyle(
@@ -266,8 +212,7 @@ class _VisionState extends State<Vision> {
                       height: 10,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 7.0), // Adjust the right padding as needed
+                      padding: EdgeInsets.only(left: 7.0),
                       child: Text(
                         "The Ministry is committed to provide quality services to all its "
                                 " stakeholders in due course of fulfilling its mandate, pursue vision and " +
@@ -297,13 +242,6 @@ class _VisionState extends State<Vision> {
                     ),
                   );
                 },
-              ),
-              Container(
-                alignment: Alignment.topCenter,
-                height: 490,
-                color: const Color.fromARGB(
-                    255, 15, 110, 161), // Align the image at the top
-                child: Text("Contact Us"),
               ),
             ]),
           ),
@@ -336,8 +274,8 @@ class _VisionState extends State<Vision> {
                     isServicesSubMenuOpen,
                     toggleReportsSubMenu,
                     isReportsSubMenuOpen,
-                     toggleAdministrationSubMenu,
-                      isAdministrationSubMenuOpen,
+                    toggleAdministrationSubMenu,
+                    isAdministrationSubMenuOpen,
                   ), // Pass closeDrawer and submenu state
                 ),
               ),
@@ -377,7 +315,7 @@ class DrawerMenu extends StatelessWidget {
   final VoidCallback toggleReportsSubMenu;
   final bool isReportsSubMenuOpen;
 
-    final VoidCallback toggleAdministrationSubMenu;
+  final VoidCallback toggleAdministrationSubMenu;
   final bool isAdministrationSubMenuOpen;
 
   DrawerMenu(
@@ -392,7 +330,7 @@ class DrawerMenu extends StatelessWidget {
     this.isServicesSubMenuOpen,
     this.toggleReportsSubMenu,
     this.isReportsSubMenuOpen,
-     this.toggleAdministrationSubMenu,
+    this.toggleAdministrationSubMenu,
     this.isAdministrationSubMenuOpen,
   );
 
@@ -447,7 +385,7 @@ class DrawerMenu extends StatelessWidget {
                 // Handle 'Roles and Values' tap
               },
             ),
-               ExpansionTile(
+            ExpansionTile(
               title: const Text('Administration'),
               trailing: isAdministrationSubMenuOpen
                   ? const IconTheme(
@@ -467,13 +405,13 @@ class DrawerMenu extends StatelessWidget {
                 ListTile(
                   title: const Text('MOF Structure'),
                   onTap: () {
-                Navigator.pop(context); // Close the submenu
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MOFstructure(),
-                    ));
-              },
+                    Navigator.pop(context); // Close the submenu
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MOFstructure(),
+                        ));
+                  },
                 ),
                 ListTile(
                   title: const Text('Minister and Management Team'),

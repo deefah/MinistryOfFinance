@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:mof_tanzania/Index.dart';
+import 'package:mof_tanzania/MOFstructure.dart';
 import 'package:mof_tanzania/StrategicPlan.dart';
-
-
+import 'package:mof_tanzania/StrategicPlan2.dart';
 import 'package:mof_tanzania/Vision.dart';
 
-class MOFstructure extends StatefulWidget {
-  const MOFstructure({super.key});
+class Contact extends StatefulWidget {
+  const Contact({super.key});
 
   @override
-  State<MOFstructure> createState() => _MOFstructureState();
+  State<Contact> createState() => _ContactState();
 }
 
-class _MOFstructureState extends State<MOFstructure> {
+class _ContactState extends State<Contact> {
   bool isDrawerOpen = false;
   bool isAboutUsSubMenuOpen = false; // Track submenu state
   bool isMediaCenterSubMenuOpen = false;
@@ -63,7 +63,7 @@ class _MOFstructureState extends State<MOFstructure> {
     });
   }
 
-    void toggleAdministrationSubMenu() {
+  void toggleAdministrationSubMenu() {
     setState(() {
       isAdministrationSubMenuOpen = !isAdministrationSubMenuOpen;
     });
@@ -94,7 +94,6 @@ class _MOFstructureState extends State<MOFstructure> {
           ],
         ),
       ),
-     
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -122,7 +121,7 @@ class _MOFstructureState extends State<MOFstructure> {
                           child: SizedBox(
                             height: 35.0,
                             child: Text(
-                              'MOF Structure',
+                              'Contact Us',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 15, 110, 161),
                                 fontSize: 15,
@@ -142,19 +141,24 @@ class _MOFstructureState extends State<MOFstructure> {
                           ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 90,
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              left: 18.0), // Adjust the right padding as needed
-                          child: Text(
-                            'The Ministry of Finance is currently headed by the Minister  and Deputy Minister. \n '
-                            'There is a Permanent Secretary who is also the Paymaster General and three Deputy \n'
-                            'Permanent Secretaries who are responsible for Economic Management, Public Finance Management, and Treasury Services.',
-                            style: TextStyle(
-                              fontSize: 15,
-                            ),
+                        Text(
+                          'Postal Address:\n'
+                          'The United Republic of Tanzania\n'
+                          'Ministry of Finance\n'
+                          'Treasury Square Building 18 Jakaya Kikwete Road\n'
+                          'P.O.BOX 2802, 40468 Dodoma\n'
+                          'Email Address:\n'
+                          'info@hazina.go.tz\n'
+                          'Phone:\n'
+                          '+255 26 2160000',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
                           ),
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
@@ -192,8 +196,8 @@ class _MOFstructureState extends State<MOFstructure> {
                     isServicesSubMenuOpen,
                     toggleReportsSubMenu,
                     isReportsSubMenuOpen,
-                     toggleAdministrationSubMenu,
-                      isAdministrationSubMenuOpen,
+                    toggleAdministrationSubMenu,
+                    isAdministrationSubMenuOpen,
                   ), // Pass closeDrawer and submenu state
                 ),
               ),
@@ -248,7 +252,7 @@ class DrawerMenu extends StatelessWidget {
     this.isServicesSubMenuOpen,
     this.toggleReportsSubMenu,
     this.isReportsSubMenuOpen,
-     this.toggleAdministrationSubMenu,
+    this.toggleAdministrationSubMenu,
     this.isAdministrationSubMenuOpen,
   );
 
@@ -303,7 +307,7 @@ class DrawerMenu extends StatelessWidget {
                 // Handle 'Roles and Values' tap
               },
             ),
-                 ExpansionTile(
+            ExpansionTile(
               title: const Text('Administration'),
               trailing: isAdministrationSubMenuOpen
                   ? const IconTheme(
@@ -323,13 +327,13 @@ class DrawerMenu extends StatelessWidget {
                 ListTile(
                   title: const Text('MOF Structure'),
                   onTap: () {
-                Navigator.pop(context); // Close the submenu
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MOFstructure(),
-                    ));
-              },
+                    Navigator.pop(context); // Close the submenu
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MOFstructure(),
+                        ));
+                  },
                 ),
                 ListTile(
                   title: const Text('Minister and Management Team'),
